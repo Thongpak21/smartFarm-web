@@ -1,29 +1,12 @@
-# version: 2
-# jobs:
-#   build:
-#     docker:
-#       - image: circleci/node:10.6.0
-#     working_directory: ~/smartfarm-web
-#     steps:
-#       - checkout
-#       # Download and cache dependencies
-#       - run: npm install && npm run build
-#       - run: ./node_modules/.bin/firebase use staging
-#       - run: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
-
 version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:10.6.0
+    working_directory: ~/smartfarm-web
     steps:
       - checkout
-
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+      # Download and cache dependencies
+      - run: npm install && npm run build
+      - run: ./node_modules/.bin/firebase use staging
+      - run: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
