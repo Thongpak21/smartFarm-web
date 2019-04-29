@@ -1,5 +1,6 @@
 {
   "projects": {
+    "develop": "smartfarm-web",
     "default": "smartfarm-50309"
   }
 }
