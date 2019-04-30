@@ -1,25 +1,78 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  height: 15vmin;
 }
 
-.App-header {
+h1 {
+  color: white !important;
+  font-size: 1.5em;
+  margin-bottom: 0em !important;
+  margin-top: 0px;
+}
+
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+@media only screen and (min-width: 800px) {
+  .navBarHeader {
+    font-size: 20px;
+    color: white;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .Item-Group {
+    display: flex;
+    justify-content: center;
+    width: 50%
+  }
+
+  .Group {
+    display: flex;
+    text-align: center;
+    flex-flow: wrap;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  .navBarHeader {
+    font-size: 20px;
+    color: white;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Item-Group {
+    display: flex;
+    justify-content: center;
+    width: 100%
+  }
+
+  .Group {
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+  }
+
+}
+
+p {
+  margin-bottom: 2px !important;
+}
+
 .App-link {
+  margin: 10px;
   color: #61dafb;
 }
 
@@ -27,6 +80,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

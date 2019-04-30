@@ -1,26 +1,29 @@
-import React from 'react'
-import logo from '../../../logo.svg'
+import React, { Component } from 'react'
 import '../../../App.css'
-
-function Home() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
+import { Layout } from 'antd'
+import Group from '../../../Components/GroupType'
+const { Header } = Layout
+class Home extends Component {
+  componentDidMount() {}
+  render() {
+    return (
+      <Layout className="layout">
+        <Header style={{ backgroundColor: '#282c3e4' }}>
+          <div className="navBarHeader">
+            {/* <img src={icon} style={{ width: '40px', height: '40px' }} alt="" /> */}
+            <p style={{ marginLeft: '10px' }}>Smart Farm</p>
+          </div>
+        </Header>
+        <div className="App">
+          <div className="Group">
+            <div className="Item-Group" style={{ backgroundColor: '#645986' }}>
+              <Group />
+            </div>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
 }
 
 export default Home
