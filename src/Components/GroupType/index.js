@@ -11,7 +11,7 @@ class Group extends Component {
   }
 
   handleOnChange = checked => {
-    // window.open(this.props.prop['download'], '_self')
+    db.ref('users/qweasdzxc').set({ isWaterOn: checked })
     console.log(`switch to ${checked}`)
   }
 
