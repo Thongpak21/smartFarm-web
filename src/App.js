@@ -5,7 +5,7 @@ import Routing from './Routes'
 
 class App extends Component {
   componentDidMount() {
-    document.title = 'AIS Easy App'
+    document.title = 'Smart Farm '
   }
   render() {
     return (
