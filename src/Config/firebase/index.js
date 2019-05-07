@@ -1,7 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
-//import 'firebase/storage'
 
 // your firebase config
 const config = {
@@ -18,5 +17,13 @@ if (!firebase.apps.length) {
 }
 
 const db = firebase.database()
+const auth = firebase.auth()
 
-export { db }
+export const isUser = auth.onAuthStateChanged(async user => {
+  if (user) {
+    return await user
+  } else {
+    return await user
+  }
+})
+export { db, auth }
