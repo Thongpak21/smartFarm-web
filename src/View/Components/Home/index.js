@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../../../App.css'
 import { Layout } from 'antd'
-import Group from '../../../Components/GroupType'
+import WaterControl from '../../../Components/ControlWater'
+import Temperature from '../../../Components/Temperature'
 const { Header } = Layout
 class Home extends Component {
   componentDidMount() {}
@@ -17,7 +18,10 @@ class Home extends Component {
         <div className="App">
           <div className="Group">
             <div className="Item-Group" style={{ backgroundColor: '#645986' }}>
-              <Group />
+              <WaterControl />
+            </div>
+            <div className="Item-Group" style={{ backgroundColor: '#1E1B18' }}>
+              <Temperature />
             </div>
           </div>
         </div>

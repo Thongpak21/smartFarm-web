@@ -5,7 +5,7 @@ import { Switch } from 'antd'
 import moment from 'moment'
 import 'moment/locale/th'
 moment.locale('th')
-class Group extends Component {
+class WaterControl extends Component {
   state = {
     isWaterOn: false,
     isLoading: true,
@@ -55,4 +55,4 @@ class Group extends Component {
   }
 }
 
-export default Group
+export default WaterControl

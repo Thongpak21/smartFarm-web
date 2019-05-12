@@ -19,11 +19,14 @@ if (!firebase.apps.length) {
 const db = firebase.database()
 const auth = firebase.auth()
 
-export const isUser = auth.onAuthStateChanged(async user => {
+export const isUser = auth.onAuthStateChanged(user => {
+  console.log(user)
+
   if (user) {
-    return await user
+    return user
   } else {
-    return await user
+    return user
   }
 })
+
 export { db, auth }

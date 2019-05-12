@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState({ redirect: true })
+        
       }
     })
   }
