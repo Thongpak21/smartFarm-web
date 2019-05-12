@@ -16,7 +16,7 @@ class Temperature extends Component {
       this.setState({
         isLoading: false,
         date: updatedAt,
-        temperature: temperature
+        temperature: temperature + '°C'
       })
     })
   }
