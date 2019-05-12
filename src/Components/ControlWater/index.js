@@ -14,7 +14,7 @@ class WaterControl extends Component {
   }
 
   handleOnChange = checked => {
-    db.ref('users/qweasdzxc').set({
+    db.ref('users/qweasdzxc').update({
       isWaterOn: checked,
       updatedAt: moment().format('LLL')
     })
