@@ -10,9 +10,10 @@ class LoginForm extends React.Component {
 
   componentDidMount() {
     auth.onAuthStateChanged(user => {
+      const { uid } = user
+      localStorage.setItem('userID', uid)
       if (user) {
         this.setState({ redirect: true })
-        
       }
     })
   }
