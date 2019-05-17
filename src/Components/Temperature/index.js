@@ -10,15 +10,18 @@ class Temperature extends Component {
   }
 
   componentDidMount() {
-    db.ref('users/qweasdzxc').on('value', dataSnapshot => {
-      const { temperature } = dataSnapshot.val()
-      const { updatedAt } = dataSnapshot.val()
-      this.setState({
-        isLoading: false,
-        date: updatedAt,
-        temperature: temperature.toFixed(2) + ' °C'
-      })
-    })
+    db.ref('users/' + localStorage.getItem('userID')).on(
+      'value',
+      dataSnapshot => {
+        const { temperature } = dataSnapshot.val()
+        const { updatedAt } = dataSnapshot.val()
+        this.setState({
+          isLoading: false,
+          date: updatedAt,
+          temperature: temperature.toFixed(2) + ' °C'
+        })
+      }
+    )
   }
   render() {
     return (

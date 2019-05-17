@@ -14,7 +14,7 @@ class WaterControl extends Component {
   }
 
   handleOnChange = checked => {
-    db.ref('users/qweasdzxc').update({
+    db.ref('users/' + localStorage.getItem('userID')).update({
       isWaterOn: checked,
       updatedAt: moment().format('LLL')
     })
@@ -22,22 +22,25 @@ class WaterControl extends Component {
   }
 
   componentDidMount() {
-    db.ref('users/qweasdzxc').on('value', dataSnapshot => {
-      const { isWaterOn } = dataSnapshot.val()
-      const { updatedAt } = dataSnapshot.val()
-      let status = ''
-      if (isWaterOn) {
-        status = 'เปิด'
-      } else {
-        status = 'ปิด'
+    db.ref('users/' + localStorage.getItem('userID')).on(
+      'value',
+      dataSnapshot => {
+        const { isWaterOn } = dataSnapshot.val()
+        const { updatedAt } = dataSnapshot.val()
+        let status = ''
+        if (isWaterOn) {
+          status = 'เปิด'
+        } else {
+          status = 'ปิด'
+        }
+        this.setState({
+          isWaterOn: isWaterOn,
+          isLoading: false,
+          date: updatedAt,
+          status: status
+        })
       }
-      this.setState({
-        isWaterOn: isWaterOn,
-        isLoading: false,
-        date: updatedAt,
-        status: status
-      })
-    })
+    )
   }
   render() {
     return (

@@ -3,10 +3,28 @@ import '../../../App.css'
 import { Layout } from 'antd'
 import WaterControl from '../../../Components/ControlWater'
 import Temperature from '../../../Components/Temperature'
+import { auth } from '../../../Config/firebase'
+import { Redirect } from 'react-router'
 const { Header } = Layout
 class Home extends Component {
-  componentDidMount() {}
+  state = {
+    redirect: false
+  }
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      const { uid } = user
+      localStorage.setItem('userID', uid)
+      if (user) {
+      } else {
+        this.setState({ redirect: true })
+      }
+    })
+  }
   render() {
+    const { redirect } = this.state
+    if (redirect) {
+      return <Redirect to="/login" />
+    }
     return (
       <Layout className="layout">
         <Header style={{ backgroundColor: '#282c3e4' }}>
