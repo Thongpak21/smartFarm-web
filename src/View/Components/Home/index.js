@@ -3,7 +3,7 @@ import '../../../App.css'
 import { Layout } from 'antd'
 import WaterControl from '../../../Components/ControlWater'
 import Temperature from '../../../Components/Temperature'
-import { auth } from '../../../Config/firebase'
+//import { auth } from '../../../Config/firebase'
 import { Redirect } from 'react-router'
 const { Header } = Layout
 class Home extends Component {
@@ -11,14 +11,20 @@ class Home extends Component {
     redirect: false
   }
   componentDidMount() {
-    auth.onAuthStateChanged(user => {
+    localStorage.setItem('userID', 'Wy1PqgfAgTbRVs2uEDToKeepENN2')
+    //auth.signOut().then(() => {
+    //localStorage.removeItem('userID')
+    //})
+    /* auth.onAuthStateChanged(user => {
       const { uid } = user
       localStorage.setItem('userID', uid)
+      console.log(user)
+
       if (user) {
       } else {
         this.setState({ redirect: true })
       }
-    })
+    })*/
   }
   render() {
     const { redirect } = this.state
