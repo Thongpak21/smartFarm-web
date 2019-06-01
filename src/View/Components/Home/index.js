@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../../App.css'
-import { Layout, Menu } from 'antd'
+import { Layout } from 'antd'
 import WaterControl from '../../../Components/ControlWater'
 import Temperature from '../../../Components/Temperature'
 import { auth } from '../../../Config/firebase'
@@ -29,7 +29,7 @@ class Home extends Component {
       <Layout className="layout">
         <Header style={{ backgroundColor: '#282c3e4' }}>
           <div className="navBarHeader">
-            <Menu
+            {/* <Menu
               theme="dark"
               mode="horizontal"
               defaultSelectedKeys={['2']}
@@ -38,7 +38,7 @@ class Home extends Component {
               <Menu.Item key="1">nav 1</Menu.Item>
               <Menu.Item key="2">nav 2</Menu.Item>
               <Menu.Item key="3">nav 3</Menu.Item>
-            </Menu>
+            </Menu> */}
             <p style={{ marginLeft: '10px' }}>Smart Farm</p>
           </div>
         </Header>
